@@ -7,6 +7,6 @@
 	<title>Events Portal</title>
 </head>
 <body>
-	<h2>Welcome</h2>
+	<h2>Welcome ${username}</h2>
 </body>
 </html>

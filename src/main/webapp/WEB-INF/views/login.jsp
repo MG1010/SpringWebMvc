@@ -7,19 +7,22 @@
 	<title>Events Portal | Sign in</title>
 </head>
 <body>
-	<h2>Sign In</h2>
+
+	<h2>Sign in</h2>
+	<p><font color="red">${errorMessage}</font></p>
 	<form action="login" type="text" name="login" method="post">
 		<div>
-			<label></label>
 			<input type="text" name="username" placeholder="Username"/>
 		</div>	
 		<div>
-			<label></label>
-			<input type="text" name="password" placeholder="Password"/>
+			<input type="password" name="password" placeholder="Password"/>
 		</div>
 		<div>
 			<input type="submit" value="Login"/>
 		</div>
 	</form>
+	
+	<p style="color:red;">${invalidcredentialsmessage}</p>
+
 </body>
 </html>
