@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-@SessionAttributes("name")
+@SessionAttributes("username")
 public class TodoController {
 
 	@Autowired
@@ -19,7 +19,7 @@ public class TodoController {
 
 	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showTodosList(ModelMap model) {
-		String user = (String) model.get("name");
+		String user = (String) model.get("username");
 		model.addAttribute("todos", service.retrieveTodos(user));
 		return "list-todos";
 	}
@@ -31,7 +31,7 @@ public class TodoController {
 
 	@RequestMapping(value = "/add-todo", method = RequestMethod.POST)
 	public String addTodo(ModelMap model, @RequestParam String desc) {
-		service.addTodo((String) model.get("name"), desc, new Date(), false);
+		service.addTodo((String) model.get("username"), desc, new Date(), false);
 		model.clear();// to prevent request parameter "name" to be passed
 		return "redirect:/list-todos";
 	}
